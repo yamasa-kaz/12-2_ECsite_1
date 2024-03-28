@@ -38,6 +38,23 @@
         <action name="UserCreateCompleteAction" class="com.diworksdev.ecsite.action.UserCreateCompleteAction" method="execute">
             <result name="success">userCreateComplete.jsp</result>
         </action>
+        
+<!-- BuyItemAction -->
+        <action name="BuyItemAction" class="com.diworksdev.ecsite.action.BuyItemAction" method="execute">
+            <result name="success">buyItemConfirm.jsp</result>
+            <result name="error">buyItem.jsp</result>
+        </action>
+        
+<!-- BuyItemConfirmAction -->
+        <action name="BuyItemConfirmAction" class="com.diworksdev.ecsite.action.BuyItemConfirmAction" method="execute">
+            <result name="success">buyItemComplete.jsp</result>
+            <result name="error">buyItem.jsp</result>
+        </action>
+        
+<!-- MyPageAction -->
+
+
+<!-- LogoutAction -->
 
     </package>
 </struts>
