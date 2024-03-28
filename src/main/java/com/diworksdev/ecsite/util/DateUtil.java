@@ -1,4 +1,4 @@
-package com.diworksdev.template.util;
+package com.diworksdev.ecsite.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

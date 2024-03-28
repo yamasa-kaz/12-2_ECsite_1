@@ -12,7 +12,7 @@
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
     
-<title>Home画面</title>
+<title>Login画面</title>
 
 <style type="text/css">
 /* Tag Layout */
@@ -63,32 +63,56 @@
     }
 </style>
 </head>
-
 <body>
-
     <div id="header">
         <div id="pr"></div>
     </div>
     
     <div id="main">
         <div id="top">
-            <p>Home</p>
+            <p>Login</p>
         </div>
-        <div id="text-center">
-            <s:form action="HomeAction">
-                <s:submit value="商品購入"/>
+        <div>
+            <h3>商品を購入する際にはログインをお願いします。</h3>
+            
+            <s:form action="LoginAction">
+            <table>
+                <tr>
+                    <td>
+                        <label>ログインID：</label>
+                    </td>
+                    <td>
+                        <s:textfield name="loginUserId"/>
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <td>
+                        <label>ログインPASS：</label>
+                    </td>
+                    <td>
+                        <s:password name="loginPassword"/>
+                    </td>
+                </tr>
+            </table>
+                
+                        <s:submit value="ログイン"/>
+                    
             </s:form>
-            <s:if test="#session.login_user_id != null">
-                <p>ログアウトする場合は
-                    <a href='<s:url action="LogoutAction"/>'>こちら</a>
+            
+            <br>
+            <div id="text-center">
+                <p>新規ユーザー登録は
+                <a href='<s:url action="UserCreateAction"/>'>こちら</a>
                 </p>
-            </s:if>
+                <p>Homeへ戻る場合は
+                <a href='<s:url action="GoHomeAction"/>'>こちら</a>
+            </div>
         </div>
     </div>
     
     <div id="footer">
         <div id="pr"></div>
     </div>
-
 </body>
 </html>
