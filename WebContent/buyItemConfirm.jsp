@@ -63,13 +63,6 @@
     }
 </style>
 
-<script type="text/javascript">
-    function submitAction(url){
-        $('form').attr('action', url);
-        $('form').submit();
-    }
-</script>
-
 </head>
 <body>
     <div id="header">
@@ -112,10 +105,12 @@
                 
                 <tr>
                     <td>
-                        <input type="button" value="戻る" onclick="submitAction('HomeAction')"/>
+                        <s:url var="back" action="HomeAction"/>
+                        <input type="button" value="戻る" onclick="return submitForm('${back}')"/>
                     </td>
                     <td>
-                        <input type="button" value="完了" onclick="submitAction('BuyItemConfirmAction')"/>
+                        <s:url var="BuyItemConfirm" action="BuyItemConfirmAction"/>
+                        <input type="button" value="完了" onclick="return submitForm('${BuyItemConfirm}')"/>
                     </td>
                 </tr>
                 
@@ -135,5 +130,14 @@
     <div id="footer">
         <div id="pr"></div>
     </div>
+    
+    <script type="text/javascript">
+    function submitForm(action){
+            document.forms[0].action=action;
+            document.forms[0].submit();
+            return false;
+        }
+    </script>
+    
 </body>
 </html>
